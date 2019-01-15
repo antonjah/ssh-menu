@@ -15,7 +15,7 @@ def main():
     hosts = conf.hosts()
 
     # Create the base menu
-    menu = ConsoleMenu("ssh-menu", "Current SSH profiles:")
+    menu = ConsoleMenu("ssh-menu", "Select the profile you want to connect to:")
 
     # Populate the menu from the SSH config
     for host in hosts:
