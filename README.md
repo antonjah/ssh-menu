@@ -6,17 +6,27 @@ and renders an interactive menu with your ssh profiles listed
 ## Installation
 
 Install:
+
 ```bash
 pip install ssh-menu
 ```
 
 Uninstall:
+
 ```bash
 pip uninstall ssh-menu
 ```
 
 **Note:** ssh-menu depends on a config file located in your *home/.ssh-folder  
 You can find examples [here](https://www.ssh.com/ssh/config/)
+
+## Docker
+
+Running in docker (why? I don't know):
+
+```bash
+docker run -it -v $PWD/config:/root/.ssh/config antonjah/ssh-menu
+```
 
 ### Dependencies
 
