@@ -5,9 +5,7 @@ and renders an interactive menu with your ssh profiles listed
 
 ## Installation
 
-ssh-menu depends on a config file located in your *home/.ssh-folder  
-You can find examples [here](https://www.ssh.com/ssh/config/)
-
+Install:
 ```bash
 pip install ssh-menu
 ```
@@ -16,6 +14,9 @@ To uninstall:
 ```bash
 pip uninstall ssh-menu
 ```
+
+**Note:** ssh-menu depends on a config file located in your *home/.ssh-folder  
+You can find examples [here](https://www.ssh.com/ssh/config/)
 
 ### Dependencies
 
