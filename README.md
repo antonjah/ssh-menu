@@ -1,6 +1,4 @@
-<img src="https://cdn.iconscout.com/icon/free/png-256/list-bullets-menu-format-formatting-items-6-3298.png" height="50" width="50">
-
-# <img src="https://cdn.iconscout.com/icon/free/png-256/list-bullets-menu-format-formatting-items-6-3298.png" height="50" width="50"> ssh-menu
+# <img src="https://cdn.iconscout.com/icon/free/png-256/list-bullets-menu-format-formatting-items-6-3298.png" height="30" width="30"> ssh-menu
 
 ssh-menu is a very simple terminal client that reads your ssh-config  
 and renders an interactive menu with your ssh profiles listed
