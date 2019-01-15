@@ -12,7 +12,7 @@ You can find examples [here](https://www.ssh.com/ssh/config/)
 pip install ssh-menu
 ```
 
-## Dependencies
+### Dependencies
 
 * [sshconf](https://pypi.org/project/sshconf/)
 * [console-menu](https://pypi.org/project/console-menu/)
