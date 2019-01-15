@@ -10,7 +10,7 @@ Install:
 pip install ssh-menu
 ```
 
-To uninstall:
+Uninstall:
 ```bash
 pip uninstall ssh-menu
 ```
