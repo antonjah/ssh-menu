@@ -12,6 +12,11 @@ You can find examples [here](https://www.ssh.com/ssh/config/)
 pip install ssh-menu
 ```
 
+To uninstall:
+```bash
+pip uninstall ssh-menu
+```
+
 ### Dependencies
 
 * [sshconf](https://pypi.org/project/sshconf/)
