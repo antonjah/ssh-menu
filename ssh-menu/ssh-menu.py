@@ -15,7 +15,9 @@ def main():
     hosts = conf.hosts()
 
     # Create the base menu
-    menu = ConsoleMenu("ssh-menu", "Select the profile you want to connect to:")
+    menu = ConsoleMenu(
+        "ssh-menu", "Select the profile you want to connect to:"
+    )
 
     # Populate the menu from the SSH config
     for host in hosts:
@@ -41,7 +43,10 @@ def main():
 
 
 def _init_ssh_conf():
-    return read_ssh_config(expanduser("~/.ssh/config"))
+    try:
+        return read_ssh_config(expanduser("~/.ssh/config"))
+    except IOError:
+        sys.exit("No config file found in {}".format(expanduser("~/.ssh/")))
 
 
 if __name__ == "__main__":

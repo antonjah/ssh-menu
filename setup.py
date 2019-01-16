@@ -10,7 +10,7 @@ config = {
     'url': 'https://github.com/antonjah/ssh-menu',
     'download_url': 'https://github.com/antonjah/ssh-menu',
     'author_email': 'contact@antonandersson.se',
-    'version': '1.0',
+    'version': '1.2',
     'install_requires': ['console-menu', 'sshconf'],
     'packages': ['ssh-menu'],
     'scripts': ['bin/ssh-menu'],
