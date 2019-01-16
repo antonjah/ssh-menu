@@ -17,7 +17,7 @@ Uninstall:
 pip uninstall ssh-menu
 ```
 
-**Note:** ssh-menu depends on a config file located in your *home/.ssh-folder  
+**Note:** ssh-menu depends on a config file located in your *user-home*/.ssh folder  
 You can find examples [here](https://www.ssh.com/ssh/config/)
 
 ## Docker
