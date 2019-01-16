@@ -28,6 +28,13 @@ Running in docker (why? I don't know):
 docker run -it -v $PWD/config:/root/.ssh/config antonjah/ssh-menu
 ```
 
+## Todo
+
+* Enable adding profiles
+* Custom profile location
+* Handle output even if session dies unexpectedly
+
+
 ### Dependencies
 
 * [sshconf](https://pypi.org/project/sshconf/)
