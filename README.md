@@ -20,6 +20,24 @@ pip uninstall ssh-menu
 **Note:** ssh-menu depends on a config file located in your *user-home*/.ssh folder  
 You can find examples [here](https://www.ssh.com/ssh/config/)
 
+## Alias
+
+You can alias ssh-menu to make it easier to use
+
+Bash:
+```bash
+echo "eval $(ssh-menu --alias ssm)" >> ~/.bashrc
+source ~/.bashrc
+```
+
+Zsh:
+```bash
+echo "eval $(ssh-menu --alias ssm)" >> ~/.zshrc
+source ~/.zshrc
+```
+
+Now you can just enter `ssm` to open ssh-menu
+
 ## Docker
 
 Running in docker (why? I don't know):
