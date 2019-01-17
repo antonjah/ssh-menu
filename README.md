@@ -26,13 +26,13 @@ You can alias ssh-menu to make it easier to use
 
 Bash:
 ```bash
-echo "eval $(ssh-menu --alias ssm)" >> ~/.bashrc
+echo 'alias ssm="ssh-menu"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 Zsh:
 ```bash
-echo "eval $(ssh-menu --alias ssm)" >> ~/.zshrc
+echo 'alias ssm="ssh-menu"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
