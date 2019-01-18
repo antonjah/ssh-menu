@@ -2,7 +2,7 @@
 
 <img src="img/scrot.png" height="" width="545">
 
-ssh-menu is a *very* simple terminal client that reads your ssh-config  
+ssh-menu is a *very* simple terminal tool that reads your ssh-config  
 and renders an interactive menu with your ssh profiles listed
 
 ## Installation
