@@ -10,13 +10,13 @@ and renders an interactive menu with your ssh profiles listed
 Install:
 
 ```bash
-pip install ssh-menu
+$ sudo pip install ssh-menu
 ```
 
 Uninstall:
 
 ```bash
-pip uninstall ssh-menu
+$ sudo pip uninstall ssh-menu
 ```
 
 **Note:** ssh-menu depends on a config file located in your *user-home*/.ssh folder  
@@ -28,14 +28,14 @@ You can alias ssh-menu to make it easier to use
 
 Bash:
 ```bash
-echo 'alias ssm="ssh-menu"' >> ~/.bashrc
-source ~/.bashrc
+$ echo 'alias ssm="ssh-menu"' >> ~/.bashrc
+$ source ~/.bashrc
 ```
 
 Zsh:
 ```bash
-echo 'alias ssm="ssh-menu"' >> ~/.zshrc
-source ~/.zshrc
+$ echo 'alias ssm="ssh-menu"' >> ~/.zshrc
+$ source ~/.zshrc
 ```
 
 Now you can just enter `ssm` to open ssh-menu
