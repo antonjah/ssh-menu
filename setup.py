@@ -15,7 +15,7 @@ config = {
     "url": "https://github.com/antonjah/ssh-menu",
     "download_url": "https://github.com/antonjah/ssh-menu",
     "author_email": "contact@antonandersson.se",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "install_requires": ["bullet"],
     "packages": ["sshmenu"],
     "entry_points": {
@@ -24,7 +24,6 @@ config = {
     "name": "ssh-menu",
     "classifiers": [
         "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 2.7",
     ],
 }
 
