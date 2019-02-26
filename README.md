@@ -5,7 +5,7 @@
 
 # <img src="https://cdn.iconscout.com/icon/free/png-256/list-bullets-menu-format-formatting-items-6-3298.png" height="30" width="30"> sshmenu
 
-<img src="img/sshmenu.png" height="" width="545">
+<img src="img/sshmenu.png">
 
 sshmenu is a *very* simple terminal tool that reads your ssh-config  
 and renders an interactive menu with your ssh profiles listed
