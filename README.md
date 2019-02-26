@@ -12,16 +12,20 @@ and renders an interactive menu with your ssh profiles listed
 
 ## Installation
 
+Requires:
+* python3
+* pip
+
 Install:
 
 ```bash
-$ sudo pip install ssh-menu
+$ sudo pip3 install ssh-menu
 ```
 
 Uninstall:
 
 ```bash
-$ sudo pip uninstall ssh-menu
+$ sudo pip3 uninstall ssh-menu
 ```
 
 **Note:** sshmenu depends on a config file located in your *user-home*/.ssh folder  
