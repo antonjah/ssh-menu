@@ -16,7 +16,7 @@ def main():
     cli = Bullet(
         choices=hosts, 
         indent=0,
-        align=5, 
+        align=4, 
         margin=2,
         bullet="🖥",
         bullet_color=colors.bright(colors.foreground["cyan"]),
@@ -28,6 +28,7 @@ def main():
     )
 
     clear()
+    print("\n    Choose ssh profile:")
     result = cli.launch()
 
     if result == "exit":
