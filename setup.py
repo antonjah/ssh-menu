@@ -15,10 +15,12 @@ config = {
     "url": "https://github.com/antonjah/ssh-menu",
     "download_url": "https://github.com/antonjah/ssh-menu",
     "author_email": "contact@antonandersson.se",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "install_requires": ["bullet"],
     "packages": ["ssh-menu"],
-    "scripts": ["bin/ssh-menu"],
+    "entry_points": {
+        "console_scripts": ['ssh-menu = ssh-menu.ssh-menu:main']
+    },
     "name": "ssh-menu",
     "classifiers": [
         "Programming Language :: Python :: 3.6",

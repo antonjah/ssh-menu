@@ -70,7 +70,3 @@ def clear():
         system("cls")
     else:
         system("clear")
-
-
-if __name__ == "__main__":
-    sys.exit(main())
