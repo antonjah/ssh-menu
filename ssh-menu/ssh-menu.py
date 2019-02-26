@@ -1,52 +1,75 @@
 #!/usr/bin/env python
 
+import re
+import subprocess
 import sys
+from os import name, system
 from os.path import expanduser
 
-from consolemenu import ConsoleMenu
-from consolemenu.items import CommandItem
-from sshconf import read_ssh_config
+from bullet import Bullet, colors
 
 
 def main():
-    # Get all SSH entries
-    conf = _init_ssh_conf()
-    # Get the hosts
-    hosts = conf.hosts()
+    home = expanduser("~/.ssh/config")
+    hosts = _get_ssh_hosts(home)
 
-    # Create the base menu
-    menu = ConsoleMenu(
-        "ssh-menu", "Select the profile you want to connect to:"
+    cli = Bullet(
+        choices=hosts, 
+        indent=0,
+        align=5, 
+        margin=2,
+        bullet="🖥",
+        bullet_color=colors.bright(colors.foreground["cyan"]),
+        word_color=colors.bright(colors.foreground["red"]),
+        word_on_switch=colors.bright(colors.foreground["red"]),
+        background_color=colors.background["black"],
+        background_on_switch=colors.background["black"],
+        pad_right = 5
     )
 
-    # Populate the menu from the SSH config
-    for host in hosts:
-        if len(host.split(" ")) > 1:
-            menu.append_item(
-                CommandItem(
-                    host,
-                    "ssh {}".format(host.split(" ")[0]),
-                    should_exit=True
-                )
-            )
-        else:
-            menu.append_item(
-                CommandItem(
-                    host,
-                    "ssh {}".format(host),
-                    should_exit=True
-                )
-            )
+    clear()
+    result = cli.launch()
 
-    # Show the menu
-    menu.show()
+    if result == "exit":
+        clear()
+        sys.exit()
 
-
-def _init_ssh_conf():
     try:
-        return read_ssh_config(expanduser("~/.ssh/config"))
+        clear()
+        subprocess.call("ssh {}".format(result), shell=True)
+    except Exception as e:
+        sys.exit(e)
+
+
+def _get_ssh_hosts(home):
+    """ Parse lines from ssh config """
+    try:
+        with open(home, "r") as fh_:
+            lines = fh_.read().splitlines()
     except IOError:
-        sys.exit("No config file found in {}".format(expanduser("~/.ssh/")))
+        sys.exit("Can't find ssh config")
+
+    hosts_ = ["exit"]
+    for line in lines:
+        kv_ = _key_value(line)
+        if len(kv_) > 1:
+            key, value = kv_
+            if key.lower() == "host":
+                hosts_.append(value)
+    return hosts_
+
+
+def _key_value(line):
+    """ Parse line key value and make sure it's not a comment """
+    no_comment = line.split("#")[0]
+    return [x.strip() for x in re.split(r"\s+", no_comment.strip(), 1)]
+
+
+def clear():
+    if name == "nt":
+        system("cls")
+    else:
+        system("clear")
 
 
 if __name__ == "__main__":
