@@ -3,9 +3,9 @@
 [![](https://images.microbadger.com/badges/version/antonjah/ssh-menu.svg)](https://microbadger.com/images/antonjah/ssh-menu "")
 
 
-# <img src="https://cdn.iconscout.com/icon/free/png-256/list-bullets-menu-format-formatting-items-6-3298.png" height="30" width="30"> ssh-menu
+# <img src="https://cdn.iconscout.com/icon/free/png-256/list-bullets-menu-format-formatting-items-6-3298.png" height="30" width="30"> sshmenu
 
-ssh-menu is a *very* simple terminal tool that reads your ssh-config  
+sshmenu is a *very* simple terminal tool that reads your ssh-config  
 and renders an interactive menu with your ssh profiles listed
 
 ## Installation
@@ -22,26 +22,26 @@ Uninstall:
 $ sudo pip uninstall ssh-menu
 ```
 
-**Note:** ssh-menu depends on a config file located in your *user-home*/.ssh folder  
+**Note:** sshmenu depends on a config file located in your *user-home*/.ssh folder  
 You can find examples [here](https://www.ssh.com/ssh/config/)
 
 ## Alias
 
-You can alias ssh-menu to make it easier to use
+You can alias sshmenu to make it easier to use
 
 Bash:
 ```bash
-$ echo 'alias ssm="ssh-menu"' >> ~/.bashrc
+$ echo 'alias ssm="sshmenu"' >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
 Zsh:
 ```bash
-$ echo 'alias ssm="ssh-menu"' >> ~/.zshrc
+$ echo 'alias ssm="sshmenu"' >> ~/.zshrc
 $ source ~/.zshrc
 ```
 
-Now you can just enter `ssm` to open ssh-menu
+Now you can just enter `ssm` to open sshmenu
 
 ## Docker
 

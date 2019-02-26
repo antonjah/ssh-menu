@@ -7,4 +7,4 @@ RUN apk add --update --no-cache openssh-client \
 
 RUN pip install ssh-menu
 
-ENTRYPOINT ["python", "/usr/local/bin/ssh-menu"]
+ENTRYPOINT ["python", "/usr/local/bin/sshmenu"]

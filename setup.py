@@ -17,9 +17,9 @@ config = {
     "author_email": "contact@antonandersson.se",
     "version": "1.4.0",
     "install_requires": ["bullet"],
-    "packages": ["ssh-menu"],
+    "packages": ["sshmenu"],
     "entry_points": {
-        "console_scripts": ['ssh-menu = ssh-menu.ssh-menu:main']
+        "console_scripts": ['sshmenu = sshmenu.sshmenu:main']
     },
     "name": "ssh-menu",
     "classifiers": [
