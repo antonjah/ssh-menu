@@ -37,6 +37,8 @@ def main():
 
     try:
         clear()
+        if len(result.split(" ")) > 1:
+            result = result.split(" ")[0]
         subprocess.call("ssh {}".format(result), shell=True)
     except Exception as e:
         sys.exit(e)
