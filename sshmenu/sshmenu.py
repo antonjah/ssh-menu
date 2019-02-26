@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
 import re
-import subprocess
 import sys
-from os import name, system
+from os import name, system, execvp
 from os.path import expanduser
 
 from bullet import Bullet, colors
@@ -39,7 +38,7 @@ def main():
         clear()
         if len(result.split(" ")) > 1:
             result = result.split(" ")[0]
-        subprocess.call("ssh {}".format(result), shell=True)
+        execvp("ssh", args=["ssh", result])
     except Exception as e:
         sys.exit(e)
 
@@ -73,3 +72,6 @@ def clear():
         system("cls")
     else:
         system("clear")
+
+if __name__ == '__main__':
+    sys.exit(main())
