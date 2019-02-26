@@ -19,13 +19,13 @@ Requires:
 Install:
 
 ```bash
-$ sudo pip3 install ssh-menu
+$ sudo pip install ssh-menu
 ```
 
 Uninstall:
 
 ```bash
-$ sudo pip3 uninstall ssh-menu
+$ sudo pip uninstall ssh-menu
 ```
 
 **Note:** sshmenu depends on a config file located in your *user-home*/.ssh folder  
