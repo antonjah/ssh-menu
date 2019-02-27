@@ -57,9 +57,3 @@ docker run -it -v $PWD/config:/root/.ssh/config antonjah/ssh-menu
 * Enable adding profiles
 * Custom profile location
 * Handle output even if session dies unexpectedly
-
-
-### Dependencies
-
-* [sshconf](https://pypi.org/project/sshconf/)
-* [console-menu](https://pypi.org/project/console-menu/)
