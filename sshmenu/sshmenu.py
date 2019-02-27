@@ -13,9 +13,9 @@ def main():
     hosts = _get_ssh_hosts(home)
 
     cli = Bullet(
-        choices=hosts, 
+        choices=hosts,
         indent=0,
-        align=4, 
+        align=4,
         margin=2,
         bullet="🖥",
         bullet_color=colors.bright(colors.foreground["cyan"]),
@@ -23,7 +23,7 @@ def main():
         word_on_switch=colors.bright(colors.foreground["red"]),
         background_color=colors.background["black"],
         background_on_switch=colors.background["black"],
-        pad_right = 5
+        pad_right=5,
     )
 
     clear()
