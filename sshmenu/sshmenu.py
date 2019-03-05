@@ -9,8 +9,8 @@ from bullet import Bullet, colors
 
 
 def main():
-    home = expanduser("~/.ssh/config")
-    hosts = _get_ssh_hosts(home)
+    config_dir = expanduser("~/.ssh/config")
+    hosts = _get_ssh_hosts(config_dir)
 
     cli = Bullet(
         choices=hosts,
@@ -43,10 +43,10 @@ def main():
         sys.exit(e)
 
 
-def _get_ssh_hosts(home):
+def _get_ssh_hosts(config_dir):
     """ Parse lines from ssh config """
     try:
-        with open(home, "r") as fh_:
+        with open(config_dir, "r") as fh_:
             lines = fh_.read().splitlines()
     except IOError:
         sys.exit("No configuration file found.")
