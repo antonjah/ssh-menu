@@ -26,18 +26,18 @@ def main():
         pad_right=5,
     )
 
-    clear()
+    _clear()
     print("\n    Choose ssh profile:")
     result = cli.launch()
 
+    _clear()
     if result == "exit":
-        clear()
         sys.exit()
 
+    if len(result.split(" ")) > 1:
+        result = result.split(" ")[0]
+
     try:
-        clear()
-        if len(result.split(" ")) > 1:
-            result = result.split(" ")[0]
         execvp("ssh", args=["ssh", result])
     except Exception as e:
         sys.exit(e)
@@ -49,7 +49,7 @@ def _get_ssh_hosts(home):
         with open(home, "r") as fh_:
             lines = fh_.read().splitlines()
     except IOError:
-        sys.exit("Can't find ssh config")
+        sys.exit("No configuration file found.")
 
     hosts_ = ["exit"]
     for line in lines:
@@ -62,12 +62,12 @@ def _get_ssh_hosts(home):
 
 
 def _key_value(line):
-    """ Parse line key value and make sure it's not a comment """
+    """ Parse lines and make sure it's not commented """
     no_comment = line.split("#")[0]
     return [x.strip() for x in re.split(r"\s+", no_comment.strip(), 1)]
 
 
-def clear():
+def _clear():
     if name == "nt":
         system("cls")
     else:
