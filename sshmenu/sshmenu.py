@@ -19,6 +19,7 @@ def main():
         margin=2,
         bullet="🖥",
         bullet_color=colors.bright(colors.foreground["cyan"]),
+        background_on_switch=colors.background["black"],
         word_color=colors.bright(colors.foreground["red"]),
         word_on_switch=colors.bright(colors.foreground["red"]),
         pad_right=5

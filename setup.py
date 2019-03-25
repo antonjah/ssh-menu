@@ -15,7 +15,7 @@ config = {
     "url": "https://antonjah.github.io/ssh-menu/",
     "download_url": "https://antonjah.github.io/ssh-menu/",
     "author_email": "contact@antonandersson.se",
-    "version": "1.5.5",
+    "version": "1.5.6",
     "install_requires": ["bullet"],
     "packages": ["sshmenu"],
     "entry_points": {
