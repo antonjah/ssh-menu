@@ -1,10 +1,10 @@
 from os import execvp
 from subprocess import check_call, check_output
 
-from decorators import tmux
+from ..decorators import decorators
 
 
-@tmux
+@decorators.tmux
 def ssh_window(host):
     tmux_windows = (
         check_output(["tmux", "list-windows", "-F", "#{window_index},#{window_name}"])

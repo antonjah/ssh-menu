@@ -15,9 +15,9 @@ config = {
     "url": "https://antonjah.github.io/ssh-menu/",
     "download_url": "https://antonjah.github.io/ssh-menu/",
     "author_email": "contact@antonandersson.se",
-    "version": "2.0.0",
+    "version": "2.0.4",
     "install_requires": ["bullet"],
-    "packages": ["sshmenu"],
+    "packages": ["sshmenu", "sshmenu.decorators", "sshmenu.tmux"],
     "entry_points": {
         "console_scripts": ['sshmenu = sshmenu.sshmenu:main']
     },

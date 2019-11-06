@@ -7,7 +7,7 @@ from os import execvp, name, system
 from os.path import expanduser
 
 from bullet import Bullet, colors
-import tmux
+from .tmux import tmux
 
 
 def main():
@@ -81,7 +81,3 @@ def _clear():
         system("cls")
     else:
         system("clear")
-
-
-if __name__ == "__main__":
-    sys.exit(main())
