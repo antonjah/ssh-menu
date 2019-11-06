@@ -5,25 +5,28 @@
 sshmenu is a *very* simple terminal tool that reads your ssh-config  
 and renders an interactive menu with your ssh profiles listed
 
+If sshmenu is executed within a Tmux session, it will automatically create a new pane and connect
+
 ## Installation
 
 Requires:
+
 * python3
 * pip
 
 Install:
 
 ```bash
-$ sudo pip install ssh-menu
+sudo pip install ssh-menu
 ```
 
 Uninstall:
 
 ```bash
-$ sudo pip uninstall ssh-menu
+sudo pip uninstall ssh-menu
 ```
 
-**Note:** sshmenu depends on a config file located in your *user-home*/.ssh folder  
+**Note:** sshmenu depends on a config file located in your `/home/user/.ssh` folder  
 You can find examples [here](https://www.ssh.com/ssh/config/)
 
 ## Alias
@@ -31,18 +34,20 @@ You can find examples [here](https://www.ssh.com/ssh/config/)
 You can alias sshmenu to make it easier to use
 
 Bash:
+
 ```bash
-$ echo 'alias ssm="sshmenu"' >> ~/.bashrc
-$ source ~/.bashrc
+echo 'alias ssm="sshmenu"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 Zsh:
+
 ```bash
-$ echo 'alias ssm="sshmenu"' >> ~/.zshrc
-$ source ~/.zshrc
+echo 'alias ssm="sshmenu"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
-Now you can just enter `ssm` to open sshmenu
+Now you can just run `ssm` to open sshmenu
 
 ## Docker
 
@@ -52,8 +57,6 @@ Running in docker (why? I don't know):
 docker run -it -v $PWD/config:/root/.ssh/config antonjah/ssh-menu
 ```
 
-## Todo
+## Contributors
 
-* Enable adding profiles
-* Custom profile location
-* Handle output even if session dies unexpectedly
+[vkushnir](https://github.com/vkushnir)

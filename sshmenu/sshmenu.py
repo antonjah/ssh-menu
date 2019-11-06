@@ -1,45 +1,54 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import re
 import sys
-from os import name, system, execvp
+from collections import OrderedDict
+from os import execvp, name, system
 from os.path import expanduser
 
 from bullet import Bullet, colors
+import tmux
 
 
 def main():
-    config_dir = expanduser("~/.ssh/config")
-    hosts = _get_ssh_hosts(config_dir)
+    ssh_config = expanduser("~/.ssh/config")
+    hosts = _get_ssh_hosts(ssh_config)
 
+    host = _render_menu(hosts)
+
+    _clear()
+
+    if host == "exit":
+        sys.exit(0)
+
+    print("Connecting to {} ...".format(host))
+
+    try:
+        tmux.ssh_window(host)
+        execvp("ssh", args=["ssh", host])
+    except Exception as e:
+        sys.exit(e)
+
+
+def _render_menu(hosts):
     cli = Bullet(
-        choices=hosts,
+        choices=list(hosts + ["exit"]),
         indent=0,
         align=4,
         margin=2,
-        bullet="🖥",
+        bullet=">",
         bullet_color=colors.bright(colors.foreground["cyan"]),
         background_on_switch=colors.background["black"],
         word_color=colors.bright(colors.foreground["red"]),
         word_on_switch=colors.bright(colors.foreground["red"]),
-        pad_right=5
+        pad_right=5,
     )
 
     _clear()
+
     print("\n    Choose ssh profile:")
-    result = cli.launch()
 
-    _clear()
-    if result == "exit":
-        sys.exit()
-
-    if len(result.split(" ")) > 1:
-        result = result.split(" ")[0]
-
-    try:
-        execvp("ssh", args=["ssh", result])
-    except Exception as e:
-        sys.exit(e)
+    return cli.launch()
 
 
 def _get_ssh_hosts(config_dir):
@@ -50,12 +59,12 @@ def _get_ssh_hosts(config_dir):
     except IOError:
         sys.exit("No configuration file found.")
 
-    hosts_ = ["exit"]
+    hosts_ = []
     for line in lines:
         kv_ = _key_value(line)
         if len(kv_) > 1:
             key, value = kv_
-            if key.lower() == "host":
+            if key.lower() == "host" and value != "*":
                 hosts_.append(value)
     return hosts_
 
@@ -67,7 +76,12 @@ def _key_value(line):
 
 
 def _clear():
+    """ Clear buffer """
     if name == "nt":
         system("cls")
     else:
         system("clear")
+
+
+if __name__ == "__main__":
+    sys.exit(main())
