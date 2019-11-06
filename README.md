@@ -27,7 +27,7 @@ sudo pip uninstall ssh-menu
 ```
 
 **Note:** sshmenu depends on a config file located in your `/home/user/.ssh` folder  
-You can find examples [here](https://www.ssh.com/ssh/config/)
+You can find examples [here](https://linuxize.com/post/using-the-ssh-config-file/)
 
 ## Alias
 
