@@ -20,6 +20,8 @@ def main():
 
     if host == "exit":
         sys.exit(0)
+    elif len(host.split(" ")) > 1:
+        host = host.split(" ")[0]
 
     print("Connecting to {} ...".format(host))
 
